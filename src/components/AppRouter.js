@@ -1,6 +1,9 @@
 import React from 'react';
-// import { BrowserRouter, Link, Route, Routes } from 'react-router-dom'
 import {BrowserRouter as Router, Link, Route, Routes} from "react-router-dom";
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
 // import Search from "../pages/Search";
 // import Signup from "../pages/Signup";
 import Main from "../pages/Main";
@@ -48,26 +51,40 @@ const AppRouter = () => {
     return (
         <div>
              <Router>
-                 <nav className="navbar">
-                     <ul className="link-list left-links">
-                         <li className="nav-item left-link">
-                             <Link to="/" className="nav-link main-link">
-                                 <div className="logo">
-                                     <img src={"home_logo.png"} alt="Главная" height="20px" width="auto"/>
-                                 </div>
-                             </Link>
-                         </li>
-                         <li className="nav-item left-link">
-                             <Link to="/offers" className="nav-link ">Объявления</Link>
-                         </li>
-                     </ul>
+                 {/*<nav className="navbar">*/}
+                 {/*    <ul className="link-list left-links">*/}
+                 {/*        <li className="nav-item left-link">*/}
+                 {/*            <Link to="/" className="nav-link main-link">*/}
+                 {/*                <div className="logo">*/}
+                 {/*                    <img src={"home_logo.png"} alt="Главная" height="20px" width="auto"/>*/}
+                 {/*                </div>*/}
+                 {/*            </Link>*/}
+                 {/*        </li>*/}
+                 {/*        <li className="nav-item left-link">*/}
+                 {/*            <Link to="/offers" className="nav-link ">Объявления</Link>*/}
+                 {/*        </li>*/}
+                 {/*    </ul>*/}
                      {/*{Cookies.get("auth_token") ? profileLogo() : authButtons()}*/}
 
-                 </nav>
+                 {/*</nav>*/}
+
+                 <Navbar expand="lg" className="bg-body-tertiary">
+                     <Container>
+                         <Navbar.Brand href="/">Радар клиентского сервиса</Navbar.Brand>
+                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                         <Navbar.Collapse id="basic-navbar-nav">
+                             <Nav className="me-auto">
+                                 <Nav.Link href="#home">Дашборд</Nav.Link>
+                                 <Nav.Link href="#link">Отзывы</Nav.Link>
+                             </Nav>
+                         </Navbar.Collapse>
+                     </Container>
+                 </Navbar>
                  <br/><br/>
                  <main>
                      <Routes>
                          <Route path="/" element={<Main/>}/>
+                         <Route path="/action/3.1" element={<Main/>}/>
                          {/*<Route path="/signup" element={<Signup/>}/>*/}
                          {/*<Route path="/signin" element={<Signin/>}/>*/}
                          {/*<Route path="/offers" element={<Search/>}/>*/}

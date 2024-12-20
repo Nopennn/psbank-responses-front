@@ -28,11 +28,15 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+div.pie {
+  height: 40px;
+  width: 40px;
+  padding: 0;
+  margin: 0;
 }
+.PieChart{
+  padding: 0;
+  margin: 0;
+}
+

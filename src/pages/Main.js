@@ -1,11 +1,16 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
+import StatChart from "../components/StatChart";
+
+
+
 
 const Main = () => {
+    const [adsInfo, setAdsInfo] = useState([])
+    const [searchType, setSearchType] = useState("housing")
     return (
         <div>
-            <br></br><br></br><br></br><br></br><br></br>
-            <p className="description"><span className="title">MAI houses</span> - это онлайн сервис, который помогает студентам и молодым специалистам в поиске соседа и подборе жилья.</p>
-
+            <p className="description"></p>
+            <StatChart name={"blah"} />
         </div>
     );
 };
